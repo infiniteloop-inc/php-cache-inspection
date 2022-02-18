@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="PHP Cache inspection">
+    <arg name="extensions" value="php"/>
+    <rule ref="PSR12"/>
+    <rule ref="Generic.Files.LineLength">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Operators.ValidLogicalOperators"/>
+</ruleset>

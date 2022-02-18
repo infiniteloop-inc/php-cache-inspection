@@ -1,0 +1,32 @@
+version: "3.2"
+
+networks:
+  frontend:
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ${APP_PATH-.}:/var/www/php-cache-inspection:cached
+    networks:
+      - frontend
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:6.0.16-alpine
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - frontend
+
+  memcached:
+    image: memcached:1.6.12-alpine
+    restart: always
+    ports:
+      - "11211:11211"
+    networks:
+      - frontend

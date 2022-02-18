@@ -1,0 +1,20 @@
+{
+    "name": "infiniteloop-inc/cache-inspection",
+    "description": "Cache inspection sample",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CacheInspection\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Masaru Yamagishi",
+            "email": "m-yamagishi@infiniteloop.co.jp"
+        }
+    ],
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6"
+    }
+}
