@@ -5,13 +5,13 @@ ARG PHP_VERSION=8.1.1
 ARG PHP_BASE_IMAGE=bullseye
 ARG PHP_EXT_INSTALLER_VERSION=1.4.8
 
-# composer イメージ
+# composer image
 FROM composer:${COMPOSER_VERSION} AS vendor
 
-# extension-installer イメージ
+# extension-installer image
 FROM mlocati/php-extension-installer:${PHP_EXT_INSTALLER_VERSION} AS ext_installer
 
-# メインイメージ
+# main image
 FROM php:${PHP_VERSION}-cli-${PHP_BASE_IMAGE}
 
 COPY --from=vendor /usr/bin/composer /usr/bin/composer
